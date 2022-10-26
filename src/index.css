@@ -1,13 +1,103 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.rbc-header{
+  padding: 20px !important;
+  color: #94A0C0 !important;  
 }
+
+.rbc-off-range-bg{
+  background: white !important;
+}
+
+.rbc-off-range{
+  color: #94A0C0 !important;
+}
+
+.rbc-date-cell{
+  display:flex !important;
+  justify-content: center !important;
+  height: 100%;
+  align-items: center;
+}
+
+.rbc-toolbar{
+  background: #F8F9FC !important;
+  margin-bottom: 0 !important;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+}
+
+.rbc-toolbar-label{
+  text-align: left !important;
+}
+
+.rbc-header + .rbc-header{
+  border-left: none !important;
+}
+
+.rbc-btn-group{
+  background-color: white;
+}
+
+.rbc-toolbar button{
+  color: #94A0C0 !important;
+}
+
+.rbc-button-link{
+  font-weight: bold;
+}
+
+.rbc-date-cell{
+  padding: 10px;
+}
+
+.rbc-today{
+  background: white !important;
+}
+
+.main{
+  position: relative;
+  padding: 40px;
+  border-radius: 20px;
+  background: white;
+}
+
+.dropdown{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.heading{
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #192252;
+}
+
+.container{
+  padding: 40px;
+  background: #E5E5E5;
+}
+
+.rbc-time-slot{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rbc-event{
+  background: #5987FF !important;
+}
+
+.rbc-event-label{
+  display: none !important;
+}
+
+
+
+
+
