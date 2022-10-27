@@ -10,7 +10,7 @@ import 'react-big-calendar/lib/sass/styles.scss'
 import './App.css'
 import right from './assets/right.png'
 import left from './assets/left.png'
-import vector from './assets/vector.png'
+// import vector from './assets/vector.png'
 
 // {
 //   MONTH: 'month',
