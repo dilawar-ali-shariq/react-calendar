@@ -8,6 +8,9 @@ import enUS from 'date-fns/locale/en-US'
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import 'react-big-calendar/lib/sass/styles.scss'
 import './App.css'
+import right from './assets/right.png'
+import left from './assets/left.png'
+import vector from './assets/vector.png'
 
 // {
 //   MONTH: 'month',
@@ -19,7 +22,7 @@ import './App.css'
 
 function App() {
 
-  const [ view , setView ] = React.useState("month")
+  const [view, setView] = React.useState("month")
 
   const locales = {
     'en-US': enUS,
@@ -35,54 +38,64 @@ function App() {
 
   React.useEffect(() => {
     const arrow = document.querySelectorAll(".rbc-toolbar span:first-child button")
-    arrow[1].innerHTML = "<"
-    arrow[2].innerHTML = ">"
-  } , [])
+    const weekDay = document.querySelectorAll('.rbc-month-header .rbc-header span')
+    arrow[1].innerHTML = `<img src='${left}'/>`
+    arrow[2].innerHTML = `<img src='${right}'/>`
+    for (let i = 0; i < weekDay.length; i++) {
+      const first3 = weekDay[i].innerHTML.substring(0, 3)
+        weekDay[i].innerHTML = first3     
+    }
+  }, [])
+
 
   const events = [
     {
       title: "Vacation",
-      start: new Date(2022, 9, 24, 10),
-      end: new Date(2022,9,24, 11)
+      start: new Date(2022, 9, 27, 10),
+      end: new Date(2022, 9, 27, 11)
     },
     {
       title: "Conference",
-      start: new Date(2022, 9, 17),
-      end: new Date(2022, 9, 17)
+      start: new Date(2022, 9, 17, 3),
+      end: new Date(2022, 9, 17, 4)
     },
     {
       title: "Big Meeting",
-      start: new Date(2022, 9, 2),
-      end: new Date(2022, 9, 2)
+      start: new Date(2022, 9, 18, 8),
+      end: new Date(2022, 9, 18, 9)
     }
   ]
 
-  return(
-    <div className="container">
-      <h1 className="heading">Your scheduled viewings</h1>
-      <div className="main">
-        <span className="dropdown">
-          <select onChange={(e) => setView(e.target.value)}>
-            <option default value="month">month</option>
-            <option value="week">week</option>
-            <option value="day">day</option>
-          </select>
-        </span>
-        
-        <Calendar
-          view={view}
-          defaultView="month"
-          localizer={localizer}
-          events={events}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 800 }}
-        />
+  return (
+    <div className="container-wrapper">
+      <div className="container">
+        <h1 className="heading">Your scheduled viewings</h1>
+        <div className="main">
+          <span className="dropdown flex">
+            <label for='label' style={{ color: '#94A0C0', paddingRight: '10px' }}>Show:</label>
+            <select id="label" style={{ border: 'none' }} onChange={(e) => setView(e.target.value)}>
+              <option default value="month">Month</option>
+              <option value="week">Week</option>
+              <option value="day">Day</option>
+              <option value="agenda">Events</option>
+            </select>
+          </span>
+
+          <Calendar
+            view={view}
+            defaultView="Month"
+            localizer={localizer}
+            events={events}
+            startAccessor="start"
+            endAccessor="end"
+            style={{ height: 800 }}
+          />
+        </div>
       </div>
     </div>
   )
 
-  
+
 }
 
 export default App;

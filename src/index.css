@@ -28,6 +28,7 @@
   padding: 20px;
   border: 1px solid #ddd;
   border-bottom: 0;
+  border-radius: 20px 20px 0 0;
 }
 
 .rbc-toolbar-label{
@@ -44,6 +45,7 @@
 
 .rbc-toolbar button{
   color: #94A0C0 !important;
+  padding: 5px 15px !important;
 }
 
 .rbc-button-link{
@@ -60,15 +62,22 @@
 
 .main{
   position: relative;
-  padding: 40px;
-  border-radius: 20px;
-  background: white;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown{
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 2.5%;
+  right: 3%;
+  width: 150px;
+  height: 35px;
+  background-color: white;
+  border-radius: 16px;
 }
 
 .heading{
@@ -79,6 +88,12 @@
 }
 
 .container{
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.container-wrapper{
   padding: 40px;
   background: #E5E5E5;
 }
@@ -89,13 +104,27 @@
   justify-content: center;
 }
 
-.rbc-event{
-  background: #5987FF !important;
-}
-
 .rbc-event-label{
   display: none !important;
 }
+
+.rbc-header span{
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.rbc-toolbar-label{
+  font-size: 16px;
+  font-weight: 700;
+  color: #192252;
+}
+
+.rbc-time-slot{
+  font-size: 18px;
+  font-weight: 400;
+  color: #58606C;
+}
+
 
 
 
