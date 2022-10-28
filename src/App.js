@@ -45,24 +45,29 @@ function App() {
       const first3 = weekDay[i].innerHTML.substring(0, 3)
         weekDay[i].innerHTML = first3     
     }
+
+    const dot = document.querySelectorAll('.rbc-month-view .rbc-month-row .rbc-row-content .rbc-row:not(:first-child) .rbc-row-segment:not(:first-child) .rbc-event')
+    const bgColor = document.querySelectorAll('.rbc-day-bg')
+    console.log(dot[0])
+    console.log(bgColor[0])
   }, [])
 
 
   const events = [
     {
       title: "Vacation",
-      start: new Date(2022, 9, 27, 10),
-      end: new Date(2022, 9, 27, 11)
-    },
-    {
-      title: "Conference",
-      start: new Date(2022, 9, 17, 3),
-      end: new Date(2022, 9, 17, 4)
+      start: new Date(2022, 9, 28, 10),
+      end: new Date(2022, 9, 28, 11)
     },
     {
       title: "Big Meeting",
-      start: new Date(2022, 9, 18, 8),
-      end: new Date(2022, 9, 18, 9)
+      start: new Date(2022, 8, 25, 8),
+      end: new Date(2022, 8, 25, 9)
+    },
+    {
+      title: "Hello",
+      start: new Date(2022, 9, 2, 8),
+      end: new Date(2022, 9, 2, 9)
     }
   ]
 
@@ -74,10 +79,9 @@ function App() {
           <span className="dropdown flex">
             <label for='label' style={{ color: '#94A0C0', paddingRight: '10px' }}>Show:</label>
             <select id="label" style={{ border: 'none' }} onChange={(e) => setView(e.target.value)}>
-              <option default value="month">Month</option>
-              <option value="week">Week</option>
-              <option value="day">Day</option>
-              <option value="agenda">Events</option>
+              <option className="design" default value="month">Month</option>
+              <option className="design" value="week">Week</option>
+              <option className="design" value="day">Day</option>
             </select>
           </span>
 

@@ -8,7 +8,7 @@
 }
 
 .rbc-off-range-bg{
-  background: white !important;
+  background: transparent !important;
 }
 
 .rbc-off-range{
@@ -57,7 +57,7 @@
 }
 
 .rbc-today{
-  background: white !important;
+  background: transparent !important;
 }
 
 .main{
