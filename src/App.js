@@ -7,18 +7,9 @@ import getDay from 'date-fns/getDay'
 import enUS from 'date-fns/locale/en-US'
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import 'react-big-calendar/lib/sass/styles.scss'
-import './App.css'
+import './App.scss'
 import right from './assets/right.png'
 import left from './assets/left.png'
-// import vector from './assets/vector.png'
-
-// {
-//   MONTH: 'month',
-//   WEEK: 'week',
-//   WORK_WEEK: 'work_week',
-//   DAY: 'day',
-//   AGENDA: 'agenda',
-// }
 
 function App() {
 
@@ -45,12 +36,7 @@ function App() {
       const first3 = weekDay[i].innerHTML.substring(0, 3)
         weekDay[i].innerHTML = first3     
     }
-
-    const dot = document.querySelectorAll('.rbc-month-view .rbc-month-row .rbc-row-content .rbc-row:not(:first-child) .rbc-row-segment:not(:first-child) .rbc-event')
-    const bgColor = document.querySelectorAll('.rbc-day-bg')
-    console.log(dot[0])
-    console.log(bgColor[0])
-  }, [])
+  }, [view])
 
 
   const events = [
@@ -66,8 +52,13 @@ function App() {
     },
     {
       title: "Hello",
-      start: new Date(2022, 9, 2, 8),
-      end: new Date(2022, 9, 2, 9)
+      start: new Date(2022, 9, 31, 8),
+      end: new Date(2022, 9, 31, 9)
+    },
+    {
+      title: "greeting",
+      start: new Date(2022, 9, 28, 12),
+      end: new Date(2022, 9, 28, 13)
     }
   ]
 
