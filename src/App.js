@@ -52,8 +52,8 @@ function App() {
     },
     {
       title: "Hello",
-      start: new Date(2022, 9, 31, 8),
-      end: new Date(2022, 9, 31, 9)
+      start: new Date(2022, 9, 2, 8),
+      end: new Date(2022, 9, 2, 9)
     },
     {
       title: "greeting",
@@ -65,7 +65,7 @@ function App() {
   return (
     <div className="container-wrapper">
       <div className="container">
-        <h1 className="heading">Your scheduled viewings</h1>
+        <h1 className="heading">{view == "month" ? "Your scheduled viewings" : "Check out your scheduled events"}</h1>
         <div className="main">
           <span className="dropdown flex">
             <label for='label' style={{ color: '#94A0C0', paddingRight: '10px' }}>Show:</label>
